@@ -1,0 +1,610 @@
+{
+    "info": {
+      "name": "API Routes",
+      "description": "Collection of API routes for testing",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Login",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"password123\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/login",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "login"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Register",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"email\": \"newuser@example.com\",\n  \"password\": \"password123\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/register",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "register"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Get User Tokens",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/user/tokens",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "user",
+              "tokens"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Get All Users",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/user/all",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "user",
+              "all"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Create ZTL",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"name\": \"ZTL1\",\n  \"location\": \"City Center\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/ztl",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "ztl"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Get ZTLs",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/ztl",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "ztl"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Get ZTL by ID",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/ztl/1",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "ztl",
+              "1"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Update ZTL",
+        "request": {
+          "method": "PUT",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"name\": \"Updated ZTL\",\n  \"location\": \"Updated Location\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/ztl/1",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "ztl",
+              "1"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Delete ZTL",
+        "request": {
+          "method": "DELETE",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/ztl/1",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "ztl",
+              "1"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Create Varco",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"name\": \"Varco1\",\n  \"location\": \"City Center\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/varchi",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "varchi"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Get Varchi",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/varchi",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "varchi"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Get Varco by ID",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/varchi/1",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "varchi",
+              "1"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Update Varco",
+        "request": {
+          "method": "PUT",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"name\": \"Updated Varco\",\n  \"location\": \"Updated Location\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/varchi/1",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "varchi",
+              "1"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Delete Varco",
+        "request": {
+          "method": "DELETE",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/varchi/1",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "varchi",
+              "1"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Create Transito",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"targa_veicolo\": \"ABC123\",\n  \"pedaggio\": \"2024-07-14T08:00:00Z\",\n  \"varco_id\": 1,\n  \"ingresso_uscita\": \"Ingresso\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/transiti",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "transiti"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Get All Transiti",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/transiti",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "transiti"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Get Transito by ID",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/transiti/1",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "transiti",
+              "1"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Update Transito",
+        "request": {
+          "method": "PUT",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"targa_veicolo\": \"ABC123\",\n  \"pedaggio\": \"2024-07-14T08:00:00Z\",\n  \"varco_id\": 1,\n  \"ingresso_uscita\": \"Uscita\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/transiti/1",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "transiti",
+              "1"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Delete Transito",
+        "request": {
+          "method": "DELETE",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/transiti/1",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "transiti",
+              "1"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Get Transiti Stato",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/transitistato?targhe=ABC123&startDate=2024-07-01&endDate=2024-07-14&format=json",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "transitistato"
+            ],
+            "query": [
+              {
+                "key": "targhe",
+                "value": "ABC123"
+              },
+              {
+                "key": "startDate",
+                "value": "2024-07-01"
+              },
+              {
+                "key": "endDate",
+                "value": "2024-07-14"
+              },
+              {
+                "key": "format",
+                "value": "json"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Download Multa PDF",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/multe/1/download",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "multe",
+              "1",
+              "download"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Get Multe per Automobilista",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/multeautomobilista",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "multeautomobilista"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Get Statistiche",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/statistiche?varco_id=1&start_date=2024-07-01&end_date=2024-07-14&format=json",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "statistiche"
+            ],
+            "query": [
+              {
+                "key": "varco_id",
+                "value": "1"
+              },
+              {
+                "key": "start_date",
+                "value": "2024-07-01"
+              },
+              {
+                "key": "end_date",
+                "value": "2024-07-14"
+              },
+              {
+                "key": "format",
+                "value": "json"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+  

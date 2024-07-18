@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "express-validator": "^7.1.0",
+    "pdfkit": "^0.15.0",
+    "qrcode": "^1.5.3"
+  },
+  "devDependencies": {
+    "@types/pdfkit": "^0.13.4",
+    "@types/qrcode": "^1.5.5"
+  }
+}

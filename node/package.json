@@ -1,0 +1,39 @@
+{
+  "name": "ztl-project",
+  "version": "1.0.0",
+  "description": "ZTL Project for traffic fines management",
+  "scripts": {
+    "start": "ts-node src/app.ts",
+    "build": "tsc",
+    "dev": "ts-node-dev src/app.ts"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "csv-stringify": "^6.4.5",
+    "dotenv": "^16.4.3",
+    "express": "^4.18.2",
+    "express-oauth2-jwt-bearer": "^1.6.0",
+    "jsonwebtoken": "^9.0.2",
+    "node-dijkstra": "^2.5.0",
+    "pdfkit": "^0.15.0",
+    "pg": "^8.11.3",
+    "postgres": "^3.4.3",
+    "qrcode": "^1.5.0", 
+    "sequelize": "^6.37.0",
+    "xml-js": "^1.6.11"
+  },
+"devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "^20.11.17",
+    "@types/node-dijkstra": "^2.5.6",
+    "@types/pdfkit": "^0.13.4",
+    "@types/qrcode": "^1.5.0",
+    "@types/sequelize": "^4.28.20",
+    "sequelize-cli": "^6.6.2",
+    "typescript": "^5.3.3"
+  }
+}
