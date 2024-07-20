@@ -56,7 +56,6 @@ Le specifiche del progetto sono state fornite dal professore [*Adriano Mancini*]
 ## Configurazione
 
 ### Diagrammi UML
-![Use Cases](https://github.com/AlessandroRongoni/ProgrammazioneAvanzata2024/blob/main/img/UseCasesOPTI.drawio.png?raw=true)
 
 ## API Routes
 
