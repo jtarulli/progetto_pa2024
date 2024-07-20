@@ -56,7 +56,7 @@ Le specifiche del progetto sono state fornite dal professore [*Adriano Mancini*]
 ## Configurazione
 
 ### Diagrammi UML
-![Logo](/node/src/untitled.jpg)
+![Logo](/node/src/Untitled.jpg)
 
 ## API Routes
 
@@ -1565,6 +1565,10 @@ Se si verifica un errore interno del server:
 Output (PDF)
 
 Il PDF generato contiene i dettagli dei transiti in formato tabellare.
+
+
+### Note:
+Per facilitare l'interfacciamento al db da parte dell'admin operatore sono state implementate analogamente anche le CRUD per i modelli Veicolo, Whitelist e Multe.
 
 
 ## Testing
