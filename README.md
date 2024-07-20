@@ -181,17 +181,17 @@ Nella seguente sezione descriveremo in dettaglio ciascuna rotta creata. Ogni chi
 
 ### POST: /login
 
-Descrizione:
+#### Descrizione:
 Permette a un utente di effettuare il login e ottenere un token JWT.
 
-Input
+#### Input
 
 {
     "email": "mario.rossi@example.com",
     "password": "Password123!"
 }
 
-Diagramma di Sequenza
+#### Diagramma di Sequenza
 
 ```mermaid
 
@@ -217,7 +217,7 @@ sequenceDiagram
 
 ```
 
-Output (Successo)
+#### Output (Successo)
 
 ```json
 
@@ -225,7 +225,7 @@ Output (Successo)
     "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 }
 ```
-Output (Errore)
+#### Output (Errore)
 
 ```json
 
@@ -236,10 +236,10 @@ Output (Errore)
 ```
 
 ### POST: /register
-Descrizione
+#### Descrizione
 Permette di registrare un nuovo utente.
 
-Input
+#### Input
 ```json
 {
     "nome": "Mario Rossi",
@@ -249,7 +249,7 @@ Input
 }
 ```
 
-Diagramma di Sequenza
+#### Diagramma di Sequenza
 
 ```mermaid
 
@@ -271,7 +271,7 @@ sequenceDiagram
     controller->>app: return success message
     app->>nuovoUtente: return success message
 ```
-Output (Successo)
+#### Output (Successo)
 
 ```json
 
@@ -292,11 +292,11 @@ Output (Successo)
 ```
 
 ### GET: /user/tokens
-Descrizione
+#### Descrizione
 
 Ottiene il numero di token di un utente autenticato tramite JWT.
 
-Diagramma di Sequenza
+#### Diagramma di Sequenza
 
 ```mermaid
 
@@ -318,7 +318,7 @@ sequenceDiagram
     app->>utente: return tokens
 ```
 
-Output (Successo)
+#### Output (Successo)
 
 ```json
 
@@ -327,7 +327,7 @@ Output (Successo)
 }
 ```
 
-Output (Errore)
+#### Output (Errore)
 
 ```json
 
@@ -338,11 +338,11 @@ Output (Errore)
 ```
 
 ### GET: /user/all
-Descrizione
+#### Descrizione
 
 Ottiene tutti gli utenti (accessibile solo con JWT e ruolo di operatore).
 
-Diagramma di Sequenza
+#### Diagramma di Sequenza
 
 ```mermaid
 
@@ -363,7 +363,7 @@ sequenceDiagram
     app->>operatore: return utenti
 ```
 
-Output (Successo)
+#### Output (Successo)
 
 ```json
 
@@ -381,7 +381,7 @@ Output (Successo)
 }
 ```
 
-Output (Errore)
+#### Output (Errore)
 
 ```json
 
@@ -393,15 +393,15 @@ Output (Errore)
 
 
 ### GET: /ztl
-Descrizione
+#### Descrizione
 
 Ottiene tutte le ZTL.
 
-Input
+#### Input
 
 N/A
 
-Diagramma di Sequenza
+#### Diagramma di Sequenza
 
 ```mermaid
 
@@ -422,7 +422,7 @@ sequenceDiagram
     app->>operatore: return ZTLs
 ```
 
-Output (Successo)
+#### Output (Successo)
 
 ```json
 
@@ -436,7 +436,7 @@ Output (Successo)
 ]
 ```
 
-Output (Errore)
+#### Output (Errore)
 
 ```json
 
@@ -448,11 +448,11 @@ Output (Errore)
 
 ### POST: /ztl
 
-Descrizione
+#### Descrizione
 
 Crea una nuova ZTL.
 
-Input
+#### Input
 
 ```json
 
@@ -462,7 +462,7 @@ Input
 }
 ```
 
-Diagramma di Sequenza
+#### Diagramma di Sequenza
 
 ```mermaid
 
@@ -487,7 +487,7 @@ sequenceDiagram
     app->>operatore: return ZTL
 ```
 
-Output (Successo)
+#### Output (Successo)
 
 ```json
 
@@ -498,7 +498,7 @@ Output (Successo)
 }
 ```
 
-Output (Errore)
+#### Output (Errore)
 
 ```json
 
@@ -509,15 +509,15 @@ Output (Errore)
 ```
 
 ### GET: /ztl/
-Descrizione
+#### Descrizione
 
 Ottiene una ZTL specifica tramite ID.
 
-Input
+#### Input
 
 N/A
 
-Diagramma di Sequenza
+#### Diagramma di Sequenza
 
 ```mermaid
 
@@ -541,7 +541,7 @@ sequenceDiagram
     controller->>app: return ZTL
     app->>operatore: return ZTL
 ```
-Output (Successo)
+#### Output (Successo)
 
 ```json
 
@@ -552,7 +552,7 @@ Output (Successo)
 }
 ```
 
-Output (Errore)
+#### Output (Errore)
 
 ```json
 
@@ -563,11 +563,11 @@ Output (Errore)
 ```
 
 ### PUT: /ztl/
-Descrizione
+#### Descrizione
 
 Aggiorna una ZTL specifica tramite ID.
 
-Input
+#### Input
 
 ```json
 
@@ -577,7 +577,7 @@ Input
 }
 ```
 
-Diagramma di Sequenza
+#### Diagramma di Sequenza
 
 ```mermaid
 
@@ -605,7 +605,7 @@ sequenceDiagram
     controller->>app: return updated ZTL
     app->>operatore: return ZTL aggiornata
 ```
-Output (Successo)
+#### Output (Successo)
 
 ```json
 
@@ -616,7 +616,7 @@ Output (Successo)
 }
 ```
 
-Output (Errore)
+#### Output (Errore)
 
 ```json
 
@@ -627,15 +627,15 @@ Output (Errore)
 ```
 
 ### DELETE: /ztl/
-Descrizione
+#### Descrizione
 
 Elimina una ZTL specifica tramite ID.
 
-Input
+#### Input
 
 N/A
 
-Diagramma di Sequenza
+#### Diagramma di Sequenza
 
 ```mermaid
 
@@ -662,7 +662,7 @@ sequenceDiagram
     app->>operatore: return status 204 NO CONTENT
 ```
 
-Output (Successo)
+#### Output (Successo)
 
 ```json
 
@@ -672,7 +672,7 @@ Output (Successo)
 }
 ```
 
-Output (Errore)
+#### Output (Errore)
 
 ```json
 
@@ -988,7 +988,7 @@ sequenceDiagram
     app->>operatore: { message: "Transito creato con successo" }
 ```
 
-Output
+#### Output 
 
 ```json
 
@@ -998,11 +998,11 @@ Output
 ```
 
 ### GET: /transiti
-Descrizione
+#### Descrizione
 
 Questa rotta permette di ottenere tutti i transiti. Solo gli utenti con ruolo "operatore" possono accedervi.
 
-Diagramma di Sequenza
+#### Diagramma di Sequenza
 
 ```mermaid
 
@@ -1028,7 +1028,7 @@ sequenceDiagram
     app->>operatore: return Transiti
 ```
 
-Output
+#### Output
 
 ```json
 
@@ -1045,11 +1045,11 @@ Output
 ```
 
 ### GET: /transiti/
-Descrizione
+#### Descrizione
 
 Questa rotta permette di ottenere un transito specifico tramite ID. Solo gli utenti con ruolo "operatore" possono accedervi.
 
-Diagramma di Sequenza
+#### Diagramma di Sequenza
 
 ```mermaid
 
@@ -1077,7 +1077,7 @@ sequenceDiagram
     app->>operatore: return Transito
 ```
 
-Output
+#### Output
 
 ```json
 
@@ -1095,7 +1095,7 @@ Output
 
 Questa rotta permette di aggiornare un transito esistente tramite ID. Solo gli utenti con ruolo "operatore" possono accedervi.
 
-Input
+#### Input
 
 ```json
 
@@ -1107,7 +1107,7 @@ Input
 }
 ```
 
-Diagramma di Sequenza
+#### Diagramma di Sequenza
 
 ```mermaid
 
@@ -1143,7 +1143,7 @@ sequenceDiagram
     app->>operatore: return updated Transito
 ```
 
-Output
+#### Output
 
 ```json
 
@@ -1161,7 +1161,7 @@ Output
 
 Questa rotta permette di eliminare un transito esistente tramite ID. Solo gli utenti con ruolo "operatore" possono accedervi.
 
-Diagramma di Sequenza
+#### Diagramma di Sequenza
 
 ```mermaid
 
@@ -1189,7 +1189,7 @@ sequenceDiagram
     app->>operatore: return { message: "Transito eliminato con successo" }
 ```
 
-Output
+#### Output
 
 ```json
 
@@ -1198,17 +1198,19 @@ Output
 }
 ```
 
-GET: /transitistato
-Descrizione
+### GET: /transitistato
+#### Descrizione
 
 Questa rotta permette di ottenere i transiti filtrati per stato, targhe e date. Accessibile agli utenti con ruolo "operatore" e "automobilista".
 
-Input (Query Parameters)
+#### Input (Query Parameters)
 
 targhe: Array di targhe dei veicoli.
 startDate: Data di inizio del periodo.
 endDate: Data di fine del periodo.
 format: Formato di output (json o pdf).
+
+#### Diagramma di Sequenza
 
 ```mermaid
 
@@ -1242,7 +1244,7 @@ sequenceDiagram
     end
 ```
 
-Output (JSON)
+#### Output (JSON)
 
 ```json
 
@@ -1263,11 +1265,11 @@ Output (JSON)
 ### GET: /multe/:id/download
 Questa rotta consente agli operatori e ai varchi di scaricare il PDF di una multa specifica.
 
-Corpo della Richiesta
+#### Corpo della Richiesta
 
 Non è necessario un corpo per questa richiesta. I dati vengono passati tramite il parametro dell'URL :id.
 
-Diagramma di Sequenza
+#### Diagramma di Sequenza
 
 ```mermaid
 
@@ -1295,7 +1297,7 @@ sequenceDiagram
     app->>client: return: PDF File
 ```
 
-Output (Successo)
+#### Output (Successo)
 
 Se la richiesta viene effettuata correttamente, il server restituisce un file PDF.
 
@@ -1308,7 +1310,7 @@ Header:
 Body:
     [Binary PDF Data]
 
-Output (Errore)
+#### Output (Errore)
 
 Multa non trovata
 
@@ -1333,11 +1335,11 @@ Errore nella generazione del PDF
 ### GET: /multeautomobilista
 Questa rotta permette agli automobilisti di ottenere tutte le multe associate ai loro veicoli.
 
-Corpo della Richiesta
+#### Corpo della Richiesta
 
 Non è necessario un corpo per questa richiesta. L'autenticazione avviene tramite il token JWT nell'header di autorizzazione.
 
-Diagramma di Sequenza
+#### Diagramma di Sequenza
 
 ```mermaid
 
@@ -1372,7 +1374,7 @@ sequenceDiagram
     app->>client: return: JSON Array of Multe
 ```
 
-Output (Successo)
+#### Output (Successo)
 
 Se la richiesta viene effettuata correttamente, il server restituisce un array di multe.
 
@@ -1390,7 +1392,7 @@ Se la richiesta viene effettuata correttamente, il server restituisce un array d
 ]
 ```
 
-Output (Errore)
+#### Output (Errore)
 Utente non autorizzato
 
 ```json
@@ -1430,6 +1432,8 @@ Errore interno del server
 
 
 ### GET: /statistiche
+Questa rotta permette di ottenere le statistiche associate ad un varco.
+#### Corpo della Richiesta
 Per poter ottenere una risposta, la richiesta dovrà includere i seguenti parametri nella query:
 
 varco_id: (numero) L'ID del varco per cui si vogliono ottenere le statistiche.
@@ -1437,6 +1441,8 @@ start_date: (stringa) La data di inizio del periodo per cui si vogliono ottenere
 end_date: (stringa) La data di fine del periodo per cui si vogliono ottenere le statistiche (formato YYYY-MM-DD).
 format: (stringa, opzionale) Il formato in cui si vogliono ottenere le statistiche (json o pdf).
 Il meccanismo che si innesca all'atto della chiamata è descritto dal seguente diagramma:
+
+#### Diagramma di Sequenza
 
 ```mermaid
 
@@ -1466,7 +1472,7 @@ sequenceDiagram
         controller->>operatore: PDF con statistiche
     end
 ```
-
+#### Output (Successo)
 Se la richiesta viene effettuata correttamente, verranno restituiti i seguenti dati:
 
 Formato JSON
@@ -1493,6 +1499,7 @@ Importo totale delle multe
 Rapporto violazioni/transiti
 In caso di errore verrà restituito un messaggio che ha come chiave il nome del codice violato e un messaggio di errore a seconda della casistica. Inoltre, verrà settato lo stato a seconda dello status code:
 
+#### Output (Errore)
 Esempio di errore
 
 Se varco_id non è valido:
@@ -1584,14 +1591,16 @@ Spostati nella cartella backend del progetto:
 
 ```bash
 
-cd ztl_project```
+cd ztl_project
+```
 
 Avvia i servizi necessari con Docker utilizzando il comando:
 
 ```bash
 
 docker-compose up --build
-Questo comando costruirà e avvierà i container definiti nel file docker-compose.yml.```
+Questo comando costruirà e avvierà i container definiti nel file docker-compose.yml.
+```
 
 6. Verifica del Funzionamento
 
