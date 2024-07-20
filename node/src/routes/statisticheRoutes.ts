@@ -4,7 +4,6 @@ import { checkRole } from '../middleware/checkRole';
 import { decrementTokens } from '../middleware/decrementToken';
 import { validateStatisticheParams } from '../middleware/validation/statisticheMiddleware';
 
-
 const router = Router();
 
 // Route per ottenere le statistiche

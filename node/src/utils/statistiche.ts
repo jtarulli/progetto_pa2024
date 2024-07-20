@@ -63,6 +63,9 @@ const getStatistiche = async (req: Request, res: Response) => {
             const doc = new PDFDocument();
             res.setHeader('Content-disposition', 'attachment; filename=statistiche.pdf');
             res.setHeader('Content-type', 'application/pdf');
+
+      
+
             doc.text(`Statistiche per il varco ${varco_id}`);
             doc.text(`Transiti totali: ${statistiche.transitiTotali}`);
             doc.text(`Violazioni totali: ${statistiche.violazioniTotali}`);

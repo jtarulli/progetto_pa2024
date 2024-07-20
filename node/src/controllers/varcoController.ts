@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { Varco } from '../models/varco';
 import { MessageGenerator } from '../messages/messaggiHandler';
-import { StatusCodes, Messages500, Messages204, Messages200 } from '../messages/messaggi';
+import { StatusCodes, Messages500, Messages204, Messages200, Messages400 } from '../messages/messaggi';
 
 // Funzione per creare un nuovo varco
 export const createVarco = async (req: Request, res: Response) => {
@@ -12,7 +12,7 @@ export const createVarco = async (req: Request, res: Response) => {
         res.status(201).json(varco);
     } catch (error) {
         // Gestione errore, restituisce un messaggio di errore interno del server
-        return MessageGenerator.getStatusMessage(StatusCodes.INTERNAL_SERVER_ERROR, res, Messages500.InternalServerError);
+        MessageGenerator.getStatusMessage(StatusCodes.INTERNAL_SERVER_ERROR, res, Messages500.InternalServerError);
     }
 };
 
@@ -25,7 +25,7 @@ export const getVarchi = async (req: Request, res: Response) => {
         res.status(200).json(varchi);
     } catch (error) {
         // Gestione errore, restituisce un messaggio di errore interno del server
-        return MessageGenerator.getStatusMessage(StatusCodes.INTERNAL_SERVER_ERROR, res, Messages500.InternalServerError);
+        MessageGenerator.getStatusMessage(StatusCodes.INTERNAL_SERVER_ERROR, res, Messages500.InternalServerError);
     }
 };
 
@@ -38,7 +38,7 @@ export const getVarcoById = async (req: Request, res: Response) => {
         res.status(200).json(varco);
     } catch (error) {
         // Gestione errore, restituisce un messaggio di errore interno del server
-        return MessageGenerator.getStatusMessage(StatusCodes.INTERNAL_SERVER_ERROR, res, Messages500.InternalServerError);
+        MessageGenerator.getStatusMessage(StatusCodes.INTERNAL_SERVER_ERROR, res, Messages500.InternalServerError);
     }
 };
 
@@ -51,10 +51,10 @@ export const updateVarco = async (req: Request, res: Response) => {
         });
         // Recupero e risposta con il varco aggiornato
         const updatedVarco = await Varco.findByPk(req.params.id);
-        return MessageGenerator.getStatusMessage(StatusCodes.OK, res, Messages200.VarcoUpdated);
+        MessageGenerator.getStatusMessage(StatusCodes.OK, res, Messages200.VarcoUpdated);
     } catch (error) {
         // Gestione errore, restituisce un messaggio di errore interno del server
-        return MessageGenerator.getStatusMessage(StatusCodes.INTERNAL_SERVER_ERROR, res, Messages500.InternalServerError);
+        MessageGenerator.getStatusMessage(StatusCodes.INTERNAL_SERVER_ERROR, res, Messages500.InternalServerError);
     }
 };
 
@@ -65,10 +65,15 @@ export const deleteVarco = async (req: Request, res: Response) => {
         const deleted = await Varco.destroy({
             where: { id: req.params.id }
         });
+
         // Risposta di successo senza contenuto
-        return MessageGenerator.getStatusMessage(StatusCodes.NO_CONTENT, res, Messages204.VarcoDeleted);
+        if (!res.headersSent) {
+            return MessageGenerator.getStatusMessage(StatusCodes.OK, res, Messages204.VarcoDeleted);
+        }
     } catch (error) {
         // Gestione errore, restituisce un messaggio di errore interno del server
-        return MessageGenerator.getStatusMessage(StatusCodes.INTERNAL_SERVER_ERROR, res, Messages500.InternalServerError);
+        if (!res.headersSent) {
+            return MessageGenerator.getStatusMessage(StatusCodes.INTERNAL_SERVER_ERROR, res, Messages500.InternalServerError);
+        }
     }
 };

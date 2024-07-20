@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import Ztl from '../models/ztl';
-import { StatusCodes, Messages200, Messages400, Messages500, Messages201, Messages404, Messages204 } from '../messages/messaggi';
+import { StatusCodes, Messages500, Messages201, Messages404, Messages204 } from '../messages/messaggi';
 import { MessageGenerator } from '../messages/messaggiHandler';
 
 // Aggiungi una nuova ZTL
@@ -11,9 +11,11 @@ export const createZtl = async (req: Request, res: Response) => {
         // Crea una nuova ZTL utilizzando i dati ricevuti dalla richiesta
         const ztl = await Ztl.create(req.body);
 
+        console.log(Messages201.ZTLCreationSuccess);
         // Rispondi con la ZTL appena creata
         return MessageGenerator.getStatusMessage(StatusCodes.CREATED, res, Messages201.ZTLCreationSuccess);
     } catch (error) {
+        console.log(error);
         // Gestione errore, restituisce un messaggio di errore interno del server
         return MessageGenerator.getStatusMessage(StatusCodes.INTERNAL_SERVER_ERROR, res, Messages500.InternalServerError);
     }
@@ -92,8 +94,11 @@ export const deleteZtl = async (req: Request, res: Response) => {
         // Elimina la ZTL dal database
         await ztl.destroy();
 
-        // Rispondi con un messaggio di successo e status 204 (No Content)
-        return MessageGenerator.getStatusMessage(StatusCodes.NO_CONTENT, res, Messages204.ZTLDeletionSuccess);
+
+         // Risposta di successo senza contenuto
+         if (!res.headersSent) {
+            return MessageGenerator.getStatusMessage(StatusCodes.OK, res, Messages204.ZTLDeletionSuccess);
+        }
 
     } catch (error) {
         // Gestione errore, restituisce un messaggio di errore interno del server

@@ -20,8 +20,8 @@ router.put('/multe/:id', checkRole(['operatore']), updateMulta);
 // Route per eliminare una multa (solo per gli operatori)
 router.delete('/multe/:id', checkRole(['operatore']), deleteMulta);
 
-// Route per scaricare il PDF della multa (accessibile a operatori e varchi)
-router.get('/multe/:id/download', checkRole(['operatore', 'varco']), decrementTokens, downloadMultaPDF);
+// Route per scaricare il PDF della multa
+router.get('/multe/:id/download', checkRole(['operatore', 'varco', 'automobilista']), decrementTokens, downloadMultaPDF);
 
 // Route per ottenere le multe di un automobilista (solo per gli automobilisti)
 router.get('/multeautomobilista', checkRole(['automobilista']), decrementTokens, getMultePerAutomobilista);

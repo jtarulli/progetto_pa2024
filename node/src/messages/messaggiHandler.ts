@@ -1,6 +1,6 @@
 import { StatusCodes, Messages500 } from './messaggi';
 import { Response } from "express";
-import { BadRequestMessage, InternalServerErrorMessage, NotFoundErrorMessage, OkMessage, UnauthorizedMessage } from './messaggiController';
+import { BadRequestMessage, CreatedMessage, InternalServerErrorMessage, NoContentMessage, NotFoundErrorMessage, OkMessage, UnauthorizedMessage } from './messaggiController';
 
 /**
  * Factory per la generazione di messaggi di stato in base al codice di stato personalizzato.
@@ -28,6 +28,10 @@ export class MessageGenerator {
                 return NotFoundErrorMessage.setStatus(res, message);
             case StatusCodes.OK:
                 return OkMessage.setStatus(res, message);
+            case StatusCodes.CREATED:
+                return CreatedMessage.setStatus(res, message);
+            case StatusCodes.NO_CONTENT:
+                return NoContentMessage.setStatus(res, message);
             default:
                 return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: Messages500.InternalServerError });
         }

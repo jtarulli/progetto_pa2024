@@ -49,10 +49,12 @@ export const getUserTokens = async (req: Request, res: Response) => {
 export const createUser = async (req: Request, res: Response) => {
     try {
         // Crea l'utente nel database
+        console.log("oppa");
         await addUserToDatabase(req);
         // Restituisce un messaggio di successo
         return MessageGenerator.getStatusMessage(StatusCodes.OK, res, Messages201.UserCreateSuccess);
     } catch (e) {
+        console.log(e);
         // Gestione errore, restituisce un messaggio di errore interno del server
         return MessageGenerator.getStatusMessage(StatusCodes.INTERNAL_SERVER_ERROR, res, Messages500.InternalServerError);
     }

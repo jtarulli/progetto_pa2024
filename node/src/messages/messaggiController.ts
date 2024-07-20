@@ -18,6 +18,19 @@ export class UnauthorizedMessage {
     }
 }
 
+export class CreatedMessage {
+    static setStatus(res: Response, message: string) {
+        res.status(StatusCodes.CREATED).json({ message });
+    }
+}
+
+export class NoContentMessage {
+    static setStatus(res: Response, message: string) {
+        res.status(StatusCodes.NO_CONTENT).json({ message });
+    }
+}
+
+
 /**
  * Classe che rappresenta un messaggio di errore interno del server.
  */

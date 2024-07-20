@@ -1,8 +1,16 @@
 import { Request, Response, NextFunction } from 'express';
-import { StatusCodes, Messages400 } from '../../messages/messaggi';
+import { StatusCodes, Messages400, Messages500, Messages404 } from '../../messages/messaggi';
+import Varco from '../../models/varco';
+import { MessageGenerator } from '../../messages/messaggiHandler';
 
-export const validateStatisticheParams = (req: Request, res: Response, next: NextFunction) => {
+export const validateStatisticheParams = async (req: Request, res: Response, next: NextFunction) => {
     const { varco_id, start_date, end_date, format } = req.query;
+
+    console.log(Number(varco_id));
+    const varco = await Varco.findByPk(Number(varco_id));
+    if (!varco) {
+        return MessageGenerator.getStatusMessage(StatusCodes.NOT_FOUND, res, Messages404.VarcoNotFound);
+    }
 
     // Controllo che varco_id sia presente e sia un numero
     if (!varco_id || isNaN(Number(varco_id))) {

@@ -11,9 +11,7 @@ export enum StatusCodes {
 
 export enum Messages200 {
     ZTLUpdateSuccess = "ZTL aggiornata con successo.",
-    ZTLDeletionSuccess = "ZTL eliminata con successo.",
-    UserCreateSuccess = "Utente creato con successo.",
-    VarcoUpdated = "Varco Updated"
+    VarcoUpdated = "Varco aggiornato con successo"
 }
 
 export enum Messages201 {

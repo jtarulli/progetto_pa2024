@@ -45,27 +45,6 @@ export const getVeicoloById = async (req: Request, res: Response) => {
     }
 };
 
-// Funzione per aggiornare un veicolo
-export const updateVeicolo = async (req: Request, res: Response) => {
-    try {
-        // Aggiornamento del veicolo nel database
-        const [updated] = await Veicolo.update(req.body, {
-            where: { targa: req.params.targa }
-        });
-        if (updated) {
-            // Recupero e risposta con il veicolo aggiornato
-            const updatedVeicolo = await Veicolo.findByPk(req.params.targa);
-            res.status(200).json(updatedVeicolo);
-        } else {
-            // Gestione errore, veicolo non trovato
-            res.status(404).json({ message: 'Veicolo non trovato' });
-        }
-    } catch (error) {
-        // Gestione errore, restituisce un messaggio di errore interno del server
-        res.status(500).json({ message: 'Errore nell\'aggiornamento del veicolo', error });
-    }
-};
-
 // Funzione per cancellare un veicolo
 export const deleteVeicolo = async (req: Request, res: Response) => {
     try {

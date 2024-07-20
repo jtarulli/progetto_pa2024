@@ -34,6 +34,7 @@ export const checkZtlExists = async (req: Request, res: Response, next: NextFunc
         }
         next();
     } catch (error) {
+        console.log(error);
         return MessageGenerator.getStatusMessage(StatusCodes.INTERNAL_SERVER_ERROR, res, Messages500.InternalServerError);
     }
 };

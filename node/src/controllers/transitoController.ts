@@ -73,7 +73,7 @@ export const deleteTransito = async (req: Request, res: Response) => {
             where: { id: req.params.id }
         }); // Elimina il transito nel database
         if (deleted) {
-            return MessageGenerator.getStatusMessage(StatusCodes.NO_CONTENT, res, Messages204.TransitDeleted);
+            return MessageGenerator.getStatusMessage(StatusCodes.OK, res, Messages204.TransitDeleted);
         } else {
             return MessageGenerator.getStatusMessage(StatusCodes.NOT_FOUND, res, Messages404.TransitNotFound);
         }
