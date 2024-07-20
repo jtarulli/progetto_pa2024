@@ -1,7 +1,7 @@
 <div align="center">
 
 
-![Logo](./logo.JPG)
+![Logo](.node/src/logo.JPG)
 </div>
 
 ## Indice
@@ -56,10 +56,9 @@ Le specifiche del progetto sono state fornite dal professore [*Adriano Mancini*]
 ## Configurazione
 
 ### Diagrammi UML
+![Logo](./node/src/untitled.jpg)
 
 ## API Routes
-
-## API Endpoints
 
 | **Metodo** | **Rotta**                          | **Parametri**                                                                                  | **Descrizione**                                                                                          |
 |------------|------------------------------------|------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
