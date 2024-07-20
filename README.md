@@ -1,7 +1,7 @@
 <div align="center">
 
 
-![Logo](.node/src/logo.JPG)
+![Logo](./logo.JPG)
 </div>
 
 ## Indice
